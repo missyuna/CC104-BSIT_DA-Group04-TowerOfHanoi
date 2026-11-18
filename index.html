@@ -1,11 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Tower of Hanoi</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    
+
+    <main class="container game-container">
+
+        <!-- Title and Instructions -->
+        <header class="game-header text-center">
+
+            <h1 id="game-title">Tower of Hanoi</h1>
+
+            <p class="objective">
+                Move all disks from
+                <strong>Tower A</strong> to
+                <strong>Tower C</strong>.
+            </p>
+
+        </header>
+
+        <!-- How to Play -->
+        <section class="instructions" id="instructions">
+
+            <h2>How to Play</h2>
+
+            <ol>
+                <li>Click a tower to select it as the source.</li>
+                <li>Click another tower to select it as the destination.</li>
+                <li>Only the top disk can be moved, one disk per turn.</li>
+                <li>A larger disk can never be placed on a smaller disk.</li>
+                <li>Win by moving all disks to Tower C.</li>
+            </ol>
+
+        </section>
+
+        <!-- Game Status -->
+        <section class="status-panel" id="status-panel">
+
+            <p class="move-counter">
+                Moves: <span id="move-counter">0</span>
+            </p>
+
+            <p id="game-message"
+               class="game-message"
+               role="status"
+               aria-live="polite">
+
+                Select a source tower to begin.
+
+            </p>
+
+        </section>
+
+        <!-- Game Board -->
+        <section class="board" id="game-board">
+
+            <!-- Tower A -->
+            <div class="tower" id="tower-A" data-tower="A">
+
+                <div class="disk-stack" id="stack-A"></div>
+                <div class="pole"></div>
+                <div class="base"></div>
+
+                <h3 class="tower-label">Tower A</h3>
+
+            </div>
+
+            <!-- Tower B -->
+            <div class="tower" id="tower-B" data-tower="B">
+
+                <div class="disk-stack" id="stack-B"></div>
+                <div class="pole"></div>
+                <div class="base"></div>
+
+                <h3 class="tower-label">Tower B</h3>
+
+            </div>
+
+            <!-- Tower C -->
+            <div class="tower" id="tower-C" data-tower="C">
+
+                <div class="disk-stack" id="stack-C"></div>
+                <div class="pole"></div>
+                <div class="base"></div>
+
+                <h3 class="tower-label">Tower C</h3>
+
+            </div>
+
+        </section>
+
+        <!-- Game Controls -->
+        <section class="controls text-center">
+
+            <button type="button" id="reset-button" class="btn">
+                Reset Game
+            </button>
+
+        </section>
+
+        <!-- Victory Message -->
+        <section id="victory-message"
+                 class="victory hidden"
+                 aria-live="polite">
+
+            <h2>Congratulations!</h2>
+
+            <p>
+                You moved all disks to Tower C in
+                <span id="final-moves">0</span> moves.
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center footer">
+
+        <p>
+            CC104 – Data Structures and Algorithms | Final Project
+        </p>
+
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/hanoi.js"></script>
+    <script src="js/game.js"></script>
+
 </body>
 </html>
